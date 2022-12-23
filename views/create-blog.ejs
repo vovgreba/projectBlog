@@ -1,0 +1,21 @@
+<% for(let i = 0; i < docs.length; i++) { %> 
+  <% if(i === numbers) break; %> 
+  <% const { name, createBlogAuthor, title, descriptionBlog } = docs[i]; %> 
+  <div class="wrapper">
+    <div class="content-blog content-blog--travel">
+      <button class="blog_name">travel</button>
+      <div class="author">
+        <img src="./img/Luka.png" alt="luka">
+        <div class="author_name">
+          <p class="full-name"></p> <%= name %> </p>
+          <p> <%= createBlogAuthor %> </p>
+        </div>
+      </div>
+      <h1 class="blog-title"><%= title %></h1>
+    </div>
+    <div class="blog-desc">
+      <p> <%= descriptionBlog %> </p>
+      <a class="blog_link" href="/link-blog" >Continue Reading</a>
+    </div>
+  </div>
+<% } %> 

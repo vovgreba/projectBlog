@@ -1,0 +1,58 @@
+<div class="blog">
+  <% const { name, createBlogAuthor, title, descriptionBlog, comment_id, user_id } = docs; %> 
+  <div class="wrapper">
+    <div class="content-blog content-blog--travel">
+      <button class="blog_name">travel</button>
+      <div class="author">
+        <img src="./img/Luka.png" alt="luka">
+        <div class="author_name">
+          <p class="full-name"> <%= name %> </p>
+          <p> <%= createBlogAuthor %> </p>
+        </div>
+      </div>
+      <h1 class="blog-title"><%= title %></h1>
+    </div>
+    <div class="blog-desc">
+      <p> <%= descriptionBlog %> </p>
+    </div>
+    <div class="comments">
+
+      <% if(comment_id.length) { %>
+      
+
+        <% for(let i = 0; i < comment_id.length; i++) {%> 
+          <div class="header">
+            <div class="logo">
+              <img src="./img/logo-name.svg" alt="avatar">
+            </div>
+              <h4 class="name"><%= user_id[i].name  %> </h4>
+              <span> <%= comment_id[i].date %> </h4> </span>
+          </div>
+          <p>
+            <%= comment_id[i].comment %> </h4>
+          </p>
+
+          <div class="control_comments">
+            <div class="like">
+              <img class="like_img" src="./img/like.png" alt="like">
+              <span class="counter_like"></span>
+            </div>
+            <button class="button-comment answer-btn">answer</button>
+          </div>
+          <% } %> 
+
+
+      <% } %> 
+
+
+
+    </div>
+    <div class="send-comment">
+      <label for="name">Your nickname</label>
+      <input type="text" id="name">
+      <textarea name="comment" class="description" placeholder="you can leave your comment here"></textarea>
+      <button class="send-btn button-comment">Send</button>
+    </div>
+    </div>
+  </div>
+</div>
